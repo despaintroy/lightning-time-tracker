@@ -1,4 +1,5 @@
 import {rand, randFirstName, randLastName, randUuid} from "@ngneat/falso"
+import {UserRole} from "api/sdk"
 import type {Organization, User} from "api/sdk"
 
 export function generateUsers(
@@ -20,7 +21,7 @@ export function generateUsers(
         projectFavorites: [],
         webPreferences: "",
         limitToProjects: null,
-        role: null
+        role: UserRole.Owner
       }
     }
   )
