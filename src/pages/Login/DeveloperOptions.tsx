@@ -33,7 +33,11 @@ export const backendURLOptions: URLOption[] = [
   }
 ]
 
-if (envBackendURL && !backendURLOptions.some((o) => o.url === envBackendURL)) {
+if (
+  envBackendURL &&
+  envBackendURL !== "mock" &&
+  !backendURLOptions.some((o) => o.url === envBackendURL)
+) {
   backendURLOptions.push({label: "Custom Env Default", url: envBackendURL})
 }
 

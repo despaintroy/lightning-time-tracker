@@ -6,6 +6,7 @@ import {UnauthContext} from "utils/context"
 import DeveloperOptions, {DEVELOPER_SECRET_CODE} from "./DeveloperOptions"
 import EnterEmail from "./EnterEmail"
 import EnterPin from "./EnterPin"
+import {Alert, AlertTitle} from "@mui/material"
 
 export const Login: FC = () => {
   const {api} = useContext(UnauthContext)
@@ -35,6 +36,13 @@ export const Login: FC = () => {
   return !isEmailSent ? (
     <>
       <EnterEmail email={email} setEmail={setEmail} sendEmail={sendEmail} />
+      {selectedBackendURL === "mock" && (
+        <Alert severity="info" sx={{mt: 2}}>
+          <AlertTitle>Demo Mode</AlertTitle>
+          Enter any email to log in. This application is currently using mock
+          data. Information is not persisted after page reloads.
+        </Alert>
+      )}
       {showDeveloperSettings && <DeveloperOptions />}
     </>
   ) : (

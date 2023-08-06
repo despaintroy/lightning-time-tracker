@@ -98,9 +98,7 @@ export class MockApi implements Api {
     emailLoginLink: async (_email: string): Promise<void> => {
       localStorage.setItem(LocalStorageKey.USER_TOKEN, "mock-user-token")
       console.log("emailLoginLink")
-      alert(
-        "You are using the mock API and will not receive an email. Refresh the page to log in."
-      )
+      window.location.reload()
     },
     emailPINLogin: async (input: EmailPinLogin): Promise<string> => {
       localStorage.setItem(LocalStorageKey.USER_TOKEN, "mock-user-token")

@@ -1,4 +1,6 @@
-# Lightning Kite React Starter
+# Lightning Time Tracker
+
+_This project was created from the Lightning Kite React starter project. Documentation below_.
 
 The purpose of this project is to be a starting point for new React apps that use Lightning Server as the backend. It is already set up with many packages and components that will be used in almost all projects including:
 
